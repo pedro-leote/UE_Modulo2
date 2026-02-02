@@ -19,6 +19,13 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	//Declare an empty function to be used in the C++ class here.
+	void Foo();
+	
+
+	//The following variables use UPROPERTIES to serialize into Blueprints. Check the equivalent Blueprint file to see visually.
+	
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;

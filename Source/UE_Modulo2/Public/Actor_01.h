@@ -4,8 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "Actor_01.generated.h"
 #include "Interface_01.h"
+#include "Actor_01.generated.h"
 
 UCLASS()
 class UE_MODULO2_API AActor_01 : public AActor, public IInterface_01
