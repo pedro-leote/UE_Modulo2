@@ -1,4 +1,6 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+
+
+//This script shows the implementation of a simple interface for Interacting. Anything with it 
 
 #pragma once
 
@@ -13,15 +15,15 @@ class UInterface_01 : public UInterface
 	GENERATED_BODY()
 };
 
-/**
- * 
- */
 class UE_MODULO2_API IInterface_01
 {
 	GENERATED_BODY()
 
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
-	
+	bool Interact();
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "Interact")
+	void InteractEvent();
 
 };

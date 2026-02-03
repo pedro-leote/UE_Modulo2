@@ -15,7 +15,10 @@ class UE_MODULO2_API AActor_01 : public AActor, public IInterface_01
 public:	
 	// Sets default values for this actor's properties
 	AActor_01();
-
+	
+	//Implemented Interface
+	bool Interact();
+	
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -24,8 +27,14 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	
+
 
 private:
+
+	UFUNCTION(BlueprintCallable)
+	virtual void CreateHealthWidget();
+	
 	UPROPERTY(EditAnywhere)
 	uint32 _integerVariable = 0;
 };
