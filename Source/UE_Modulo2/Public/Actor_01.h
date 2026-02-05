@@ -32,8 +32,8 @@ public:
 
 private:
 
-	UFUNCTION(BlueprintCallable)
-	virtual void CreateHealthWidget();
+	//UFUNCTION(BlueprintCallable)
+	//virtual void CreateHealthWidget();
 	
 	UPROPERTY(EditAnywhere)
 	uint32 _integerVariable = 0;
