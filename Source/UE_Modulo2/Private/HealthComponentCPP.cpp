@@ -32,3 +32,12 @@ void UHealthComponentCPP::TickComponent(float DeltaTime, ELevelTick TickType, FA
 	// ...
 }
 
+void UHealthComponentCPP::SetCurrentHealth(int32 NewHealth)
+{
+	CurrentHealth = NewHealth;
+}
+
+void UHealthComponentCPP::SetMaxHealth(int32 NewHealth)
+{
+	MaxHealth = NewHealth;
+}
