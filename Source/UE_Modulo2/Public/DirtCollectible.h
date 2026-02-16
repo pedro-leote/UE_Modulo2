@@ -3,8 +3,9 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "HealthComponentCPP.h"
 #include "GameFramework/Actor.h"
+#include "UE_Modulo2.h"
+#include "HealthComponentCPP.h"
 #include "DirtCollectible.generated.h"
 
 UCLASS()
