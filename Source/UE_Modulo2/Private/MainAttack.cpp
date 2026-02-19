@@ -27,12 +27,14 @@ void AMainAttack::BeginPlay()
 	SphereCollider->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 	//Start a timer to enable it again. This gets the handler, sets the time to wait, and summons EnableSphereCollision after.
 	GetWorldTimerManager().SetTimer(
-		CollisionEnableTimer,
-		this,
-		&AMainAttack::EnableSphereCollision,
-		0.4f,
-		false
-		);
+    CollisionEnableTimer,
+    [this]()
+    {
+        EnableSphereCollision(true);
+    },
+    0.4f,
+    false
+);
 	
 }
 
@@ -64,12 +66,17 @@ void AMainAttack::PlayEffect(AActor* targetActor)
 	niagaraComponent->Activate(true);
 }
 
-void AMainAttack::EnableSphereCollision()
+void AMainAttack::EnableSphereCollision(bool state)
 {
 	if(SphereCollider)
 	{
-		SphereCollider->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+		SphereCollider->SetCollisionEnabled(state ? ECollisionEnabled::QueryAndPhysics : ECollisionEnabled::NoCollision);
 		UE_LOG(LogTemp, Warning, TEXT("ATTACKACTOR: SphereCollider collision enabled"));
+		if(SphereCollider->IsCollisionEnabled())
+		{
+			CheckForDirtAttack();
+			GetWorldTimerManager().ClearTimer(CollisionEnableTimer);
+			EnableSphereCollision(false);
+		}
 	}
 }
-

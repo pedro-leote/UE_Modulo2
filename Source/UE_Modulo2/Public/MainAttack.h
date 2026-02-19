@@ -26,10 +26,13 @@ protected:
 	FTimerHandle CollisionEnableTimer;
 	
 	UFUNCTION()
-	void EnableSphereCollision();
+	void EnableSphereCollision(bool state);
 
 	UFUNCTION(BlueprintCallable)
 	void PlayEffect(AActor* targetActor);
+
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+	void CheckForDirtAttack();
 	
 private:	
 	// Called every frame
